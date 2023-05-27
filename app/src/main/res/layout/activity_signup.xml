@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup">
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_btn"
+        android:text="প্রবেশ করুন"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/gotologintext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmpassword" />
+
+    <TextView
+        android:id="@+id/gotologintext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:text="ইতোমধ্যে অ্যাকাউন্ট খোলা আছে? প্রবেশ করুন"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_btn" />
+
+    <EditText
+        android:id="@+id/editTextFullname"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_fields"
+        android:ems="10"
+        android:hint="  নাম"
+        android:inputType="text"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#636363"
+        app:layout_constraintBottom_toTopOf="@+id/editTextemail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:id="@+id/editTextpassword"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_fields"
+        android:ems="10"
+        android:hint="  পাসওয়ার্ড"
+        android:inputType="textPassword"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#636363"
+        app:layout_constraintBottom_toTopOf="@+id/editTextConfirmpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextusername" />
+
+    <EditText
+        android:id="@+id/editTextConfirmpassword"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_fields"
+        android:ems="10"
+        android:hint="  পাসওয়ার্ড কনফার্ম করুন"
+        android:inputType="textPassword"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#636363"
+        app:layout_constraintBottom_toTopOf="@+id/register_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextpassword" />
+
+    <EditText
+        android:id="@+id/editTextusername"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_fields"
+        android:ems="10"
+        android:hint="  ইউজারনেম"
+        android:inputType="text"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#636363"
+        app:layout_constraintBottom_toTopOf="@+id/editTextpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextemail" />
+
+    <EditText
+        android:id="@+id/editTextemail"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_fields"
+        android:ems="10"
+        android:hint="  ইমেইল"
+        android:inputType="text"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#636363"
+        app:layout_constraintBottom_toTopOf="@+id/editTextusername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFullname" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="346dp"
+        android:layout_height="191dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/black_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
