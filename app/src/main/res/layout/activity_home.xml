@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/toAboutUs"
+            android:id="@+id/toBack"
             android:layout_width="50dp"
             android:layout_height="56dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,13 +31,13 @@
             app:srcCompat="@drawable/info" />
 
         <ImageView
-            android:id="@+id/profile"
+            android:id="@+id/profile_btn"
             android:layout_width="57dp"
             android:layout_height="47dp"
             android:layout_marginStart="280dp"
             android:layout_marginLeft="280dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/toAboutUs"
+            app:layout_constraintStart_toEndOf="@+id/toBack"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/profile_icon" />
 

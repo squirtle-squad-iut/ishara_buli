@@ -5,7 +5,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.ImageView;
 
 public class home extends AppCompatActivity {
@@ -27,13 +26,13 @@ public class home extends AppCompatActivity {
 //            startActivity(intent);
         });
 
-        final ImageView iv_profile = findViewById(R.id.profile);
+        final ImageView iv_profile = findViewById(R.id.profile_btn);
         iv_profile.setOnClickListener(v-> {
             Intent intent = new Intent(home.this, Profile.class);
             startActivity(intent);
         });
 
-        final ImageView iv_about = findViewById(R.id.toAboutUs);
+        final ImageView iv_about = findViewById(R.id.toBack);
         iv_about.setOnClickListener(v-> {
             Intent intent = new Intent(home.this, about.class);
             startActivity(intent);
