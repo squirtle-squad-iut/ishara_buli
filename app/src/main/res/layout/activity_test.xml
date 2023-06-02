@@ -4,68 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".test">
+    tools:context=".MainActivity2">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutTop"
-        android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:background="@drawable/sharp_btn"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="331dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="20dp"
+        android:background="#008CBBF1"
+        android:text="ইশারাবুলি টেস্টিং স্টেজে স্বাগতম।\n
+         এখন, আমরা আপনাকে শিখেছি এমন ইশারা গুলি  পুনরায় তৈরি করতে বলব। আপনি ছবি তুলে বা গ্যালারি থেকে ছবি নির্বাচন করে ইশারা গুলি  পুনরায় তৈরি করতে পারবেন | আপনার ইশারা সঠিক হয়েছে কিনা যাচাই করে আমরা আপনাকে স্কোর দিব। এই স্কোর এর মাদ্ধমে আপনি আপনার বাংলা ভাষার ইশারা শেখার প্রগ্রেস জানতে পারবেন। "
+        android:textAlignment="center"
+        android:textColor="#676565"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/toBack"
-            android:layout_width="50dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.466"
-            app:srcCompat="@drawable/back_button" />
-
-        <ImageView
-            android:id="@+id/profile_btn"
-            android:layout_width="57dp"
-            android:layout_height="47dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile_icon" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.camera.view.PreviewView
-        android:id="@+id/view_finder"
-        android:layout_width="match_parent"
-        android:layout_height="501dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTop"
-        app:scaleType="fillStart" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:text="TextView"
+        android:layout_width="388dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:text="ইশরাবুলি পরীক্ষার জন্য নির্দেশনা"
+        android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="223dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_within_circle" />
+
+    <Button
+        android:id="@+id/YesToInstruction"
+        android:layout_width="136dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:background="#8CBBF1"
+        android:backgroundTint="#8CBBF1"
+        android:bottomLeftRadius="20dp"
+        android:bottomRightRadius="20dp"
+        android:shadowColor="#03A9F4"
+        android:text="টেস্টিং শুরু করি "
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+
+
+        android:topLeftRadius="20dp"
+        android:topRightRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:strokeColor="#03A9F4" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="#8CBBF1"
+        android:backgroundTint="#8CBBF1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_finder"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/YesToInstruction"
+        app:layout_constraintVertical_bias="1.0">
 
-    <!--    <com.google.mediapipe.examples.handlandmarker.OverlayView-->
-<!--        android:id="@+id/overlay"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="501dp" />-->
+        <ImageView
+            android:id="@+id/toProgress"
+            android:layout_width="50dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:srcCompat="@drawable/only_logo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

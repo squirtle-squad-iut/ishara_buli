@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "919332732398",
+    "project_id": "isharabuli",
+    "storage_bucket": "isharabuli.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919332732398:android:e47bd3b5dc8b629c9822ff",
+        "android_client_info": {
+          "package_name": "com.example.login_signup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919332732398-rjmakf9hbm6jj94mlq0h3m7e9k43603b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn2W-EfFgaFJ-6Yb83y8TgOnB9DBLofGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919332732398-rjmakf9hbm6jj94mlq0h3m7e9k43603b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "919332732398-347pp8s1h3sb3tfisaia8t27qs0ao0h2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.loginsignup"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919332732398:android:d1929e864af0a0e79822ff",
+        "android_client_info": {
+          "package_name": "com.squirtle_squad.ishara_buli"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "919332732398-rjmakf9hbm6jj94mlq0h3m7e9k43603b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn2W-EfFgaFJ-6Yb83y8TgOnB9DBLofGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919332732398-rjmakf9hbm6jj94mlq0h3m7e9k43603b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "919332732398-347pp8s1h3sb3tfisaia8t27qs0ao0h2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.loginsignup"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
