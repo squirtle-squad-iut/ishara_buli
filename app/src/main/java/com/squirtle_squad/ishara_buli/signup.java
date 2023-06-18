@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +19,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
@@ -29,6 +34,7 @@ public class signup extends AppCompatActivity {
     private Button btn_signUp;
 
     EditText et_username, et_mail, et_password, et_pass2;
+    private TextView tv_gotoLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,13 @@ public class signup extends AppCompatActivity {
         et_mail = findViewById(R.id.email_mt);
         et_pass2 = findViewById(R.id.pass2_tp);
         et_password = findViewById(R.id.pass1_tp);
+
+        tv_gotoLogin = findViewById(R.id.gotoLogin);
+
+        tv_gotoLogin.setOnClickListener(v-> {
+            Intent intent = new Intent(signup.this, login.class);
+            startActivity(intent);
+        });
 
         btn_signUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,8 +87,12 @@ public class signup extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
+                            Toast.makeText(signup.this, "Signup Successful",
+                                    Toast.LENGTH_SHORT).show();
+
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateDisplayName(user, displayName);
+                            initializeScore(user);
                             gotoHome();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -85,6 +102,31 @@ public class signup extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void initializeScore(FirebaseUser user) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+// Get the current user ID
+        String userId = user.getUid();
+
+// Create a new user document with the initial score of 0
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("score", 0);
+
+// Set the document in the "users" collection with the user ID
+        db.collection("users").document(userId)
+                .set(userData)
+                .addOnSuccessListener(aVoid -> {
+                    // Initial score document created successfully
+                    Log.d(TAG, "Initial score document created for user: " + userId);
+                })
+                .addOnFailureListener(e -> {
+                    // Error occurred while creating the initial score document
+                    Log.w(TAG, "Error creating initial score document", e);
+                    Toast.makeText(signup.this, "Faild to initialize score", Toast.LENGTH_SHORT).show();
+                });
+
     }
 
     private void updateDisplayName(FirebaseUser user, String displayName) {

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:background="@drawable/round_btn"
-        android:text="প্রবেশ করুন"
+        android:text="নিবন্ধন করুন"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pass2_tp" />
 
     <TextView
-        android:id="@+id/gotologintext"
+        android:id="@+id/gotoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"

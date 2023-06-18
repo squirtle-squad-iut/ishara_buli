@@ -8,6 +8,7 @@ import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squirtle_squad.ishara_buli.ml.Model;
 
 import org.tensorflow.lite.DataType;
@@ -24,6 +28,10 @@ import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.HashMap;
+import java.util.Map;
+
+import static android.content.ContentValues.TAG;
 
 public class testing extends AppCompatActivity {
 
@@ -182,6 +190,7 @@ public class testing extends AppCompatActivity {
                 cnt++;
                 performance.setText("আপনার ইশারাটি  সঠিক!");
                 score.setText("স্কোর: "+Integer.toString(cnt)+" / "+signs_learnt);
+                updateScore();
             }
             else
             {
@@ -196,6 +205,46 @@ public class testing extends AppCompatActivity {
         } catch (IOException e) {
             // TODO Handle the exception
         }
+    }
+
+    private void updateScore() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+// Get the current user ID
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+// Retrieve the user document from Firestore
+        db.collection("users").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        // Get the current score from the document
+                        int currentScore = documentSnapshot.getLong("score").intValue();
+
+                        // Update the score by adding 1
+                        int newScore = currentScore + 1;
+
+                        // Update the score field in the document
+                        db.collection("users").document(userId)
+                                .update("score", newScore)
+                                .addOnSuccessListener(aVoid -> {
+                                    // Score updated successfully
+                                    Log.d(TAG, "Score updated for user: " + userId);
+                                })
+                                .addOnFailureListener(e -> {
+                                    // Error occurred while updating the score
+                                    Log.w(TAG, "Error updating score", e);
+                                });
+                    } else {
+                        // Document does not exist, handle the case accordingly
+                        Log.d(TAG, "User document does not exist for user: " + userId);
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // Error occurred while retrieving the user document
+                    Log.w(TAG, "Error retrieving user document", e);
+                });
+
     }
 
     @Override

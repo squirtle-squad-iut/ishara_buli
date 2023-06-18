@@ -21,7 +21,7 @@ import static android.content.ContentValues.TAG;
 
 public class login extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    TextView tv_email, tv_password;
+    TextView tv_email, tv_password, tv_gotoSignup;
     Button btn_login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,12 @@ public class login extends AppCompatActivity {
         tv_email = findViewById(R.id.email_tv);
         tv_password = findViewById(R.id.pass1_tp);
         btn_login = findViewById(R.id.signin_btn);
+        tv_gotoSignup = findViewById(R.id.gotosignup);
 
+        tv_gotoSignup.setOnClickListener(v-> {
+            Intent intent = new Intent(login.this, signup.class);
+            startActivity(intent);
+        });
 
         btn_login.setOnClickListener(v-> {
             String email = tv_email.getText().toString().trim();
@@ -55,7 +60,8 @@ public class login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-
+                            Toast.makeText(login.this, "Login Successful",
+                                    Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(login.this, home.class);
                             startActivity(intent);
                         } else {
